@@ -62,10 +62,10 @@ export default function Chat(props: { apiKeyApp: string }) {
     // Chat post conditions(maximum number of characters, valid message etc.)
     const maxCodeLength = model === 'gpt-4o' ? 700 : 700;
 
-   import Chat from "@/components/Chat"; // танай project-д Chat-ыг хаанаас import хийдэг тэр замаа үлдээнэ
-export default function ChatPage() {
-  return <Chat />; // API key шалгахгүй — чат үргэлж гарна
-}
+    if (!apiKey?.includes('sk-')) {
+      alert('Please enter an API key.');
+      return;
+    }
 
     if (!inputCode) {
       alert('Please enter your message.');
